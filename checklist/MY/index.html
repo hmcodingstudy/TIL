@@ -4,34 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Checklist</title>
     <script src="main.js" defer></script>
     <script
       src="https://kit.fontawesome.com/a32c586e93.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <section class="list">
-      <header class="header">Shopping List</header>
+      <header class="header">
+        <span class="day"></span>,
+        <span class="month"></span>
+        <span class="date"></span>
+      </header>
+      <div class="total_tasks">
+        <span class="total"></span>
+        <span>tasks</span>
+      </div>
       <ul class="items">
         <li class="item__row">
           <div class="item">
+            <!-- <input type="checkbox" class="check_box" onclick="checkedList()"> -->
             <span class="item__name">Egg</span>
-            <button class="item__delete">
+            <button class="item__delete" onclick="delList()">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
           <div class="item__divider"></div>
         </li>
+        
       </ul>
       <footer class="footer">
-        <input type="text" class="footer__input" />
-        <button class="footer__button">
+        <input type="text" class="footer__input" onchange="addList()"/>
+        <!-- onchange로 이벤트 설정 시 enter키로도 입력 가능 -->
+        <button class="footer__button" onclick="addList()">
           <i class="fas fa-plus"></i>
         </button>
       </footer>
     </section>
   </body>
 </html>
+
+
